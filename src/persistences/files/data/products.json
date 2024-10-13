@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "title": "Camisa de algodón",
+        "description": "Camisa de algodón de manga larga",
+        "price": 29.99,
+        "thumbnail": "https://ejemplo.com/camisa.jpg",
+        "code": "CM001",
+        "stock": 50,
+        "category": "indumentaria",
+        "status": true
+    },
+    {
+        "id": 2,
+        "title": "Pantalones vaqueros",
+        "description": "Pantalones vaqueros de corte clásico",
+        "price": 39.99,
+        "thumbnail": "https://ejemplo.com/pantalones.jpg",
+        "code": "PN002",
+        "stock": 30,
+        "category": "indumentaria",
+        "status": true
+    },
+    {
+        "id": 3,
+        "title": "Zapatillas deportivas",
+        "description": "Zapatillas deportivas para correr",
+        "price": 49.99,
+        "thumbnail": "https://ejemplo.com/zapatillas.jpg",
+        "code": "ZP003",
+        "stock": 25,
+        "category": "calzado",
+        "status": true
+    },
+    {
+        "id": 4,
+        "title": "Chaqueta de cuero",
+        "description": "Chaqueta de cuero genuino",
+        "price": 99.99,
+        "thumbnail": "https://ejemplo.com/chaqueta.jpg",
+        "code": "CH004",
+        "stock": 20,
+        "category": "indumentaria",
+        "status": true
+    },
+    {
+        "id": 5,
+        "title": "Bufanda de lana",
+        "description": "Bufanda de lana suave y cálida",
+        "price": 14.99,
+        "thumbnail": "https://ejemplo.com/bufanda.jpg",
+        "code": "BF006",
+        "stock": 35,
+        "category": "accesorios",
+        "status": true
+    },
+    {
+        "id": 6,
+        "title": "Reloj de pulsera",
+        "description": "Reloj de pulsera con correa de cuero",
+        "price": 79.99,
+        "thumbnail": "https://ejemplo.com/reloj.jpg",
+        "code": "RL007",
+        "stock": 15,
+        "category": "accesorios",
+        "status": true
+    },
+    {
+        "id": 7,
+        "title": "Mochila",
+        "description": "Mochila resistente al agua con múltiples compartimentos",
+        "price": 59.99,
+        "thumbnail": "https://ejemplo.com/mochila.jpg",
+        "code": "MC008",
+        "stock": 10,
+        "category": "accesorios",
+        "status": true
+    },
+    {
+        "id": 8,
+        "title": "Gafas de sol",
+        "description": "Gafas de sol polarizadas con montura de metal",
+        "price": 34.99,
+        "thumbnail": "https://ejemplo.com/gafas.jpg",
+        "code": "GS009",
+        "stock": 20,
+        "category": "accesorios",
+        "status": true
+    },
+    {
+        "id": 9,
+        "title": "Zapatillas urbanas",
+        "description": "Zapatillas para todo tipo de evento",
+        "price": 49.99,
+        "thumbnail": "https://ejemplo.com/urbanas.jpg",
+        "code": "ZU043",
+        "stock": 25,
+        "category": "calzado",
+        "status": true
+    },
+    {
+        "id": 10,
+        "title": "Campera de cuero",
+        "description": "Campera de cuero",
+        "price": 67,
+        "thumbnail": "https://ejemplo.com/campera.jpg",
+        "code": "CC004",
+        "stock": 22,
+        "category": "indumentaria",
+        "status": true
+    },
+    {
+        "id": 11,
+        "title": "Cinturon",
+        "description": "Cinto de cuero con tachas",
+        "price": 12.99,
+        "thumbnail": "https://ejemplo.com/cinturon.jpg",
+        "code": "CC076",
+        "stock": 15,
+        "category": "accesorios",
+        "status": true
+    }
+]

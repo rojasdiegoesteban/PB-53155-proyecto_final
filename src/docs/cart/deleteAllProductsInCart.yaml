@@ -1,0 +1,18 @@
+paths:
+  /api/carts/{cid}:
+    delete:
+      tags:
+        - Cart
+      summary: Eliminar todos los productos de un carrito
+      parameters:
+        - name: cid
+          in: path
+          description: Id del carrito
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Se eliminaron todos los productos del carrito
+        "500":
+          description: Error interno del servidor
