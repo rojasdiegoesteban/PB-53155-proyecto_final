@@ -3,7 +3,7 @@ paths:
     get:
       tags:
         - Cart
-      summary: Carrito de compras
+      summary: Finalizar compra
       parameters:
         - name: cid
           in: path

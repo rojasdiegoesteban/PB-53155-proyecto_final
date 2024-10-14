@@ -5,6 +5,7 @@ import { authorization, passportCall } from "../middlewares/passport.middleware.
 
 const router = Router();
 
+router.get("/", userController.getAllUsers);
 router.post("/email/reset-password", userController.sendEmailResetPassword);
 router.post("/reset-password", userController.resetPassword);
 router.get("/premium/:uid", userController.changeUserRole);

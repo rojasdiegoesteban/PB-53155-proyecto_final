@@ -1,0 +1,20 @@
+paths:
+    /api/user/premium/{uid}:
+        get:
+            tags:
+                - Users
+            summary: Modificar el rol de un usuario
+            parameters:
+              - name: uid
+                in: path
+                description: ID del usuario
+                required: true
+                schema: 
+                  type: string
+            responses:
+                "200":
+                    description: El usuario fue actualizado correctamente.
+                "404":
+                    description: Usuario no encontrado
+                "500":
+                    description: Error interno del servidor

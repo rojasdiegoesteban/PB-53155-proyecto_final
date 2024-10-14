@@ -1,5 +1,17 @@
 import customErrors from "../errors/customErrors.js";
 import userServices from "../services/user.services.js";
+import { userResponseDto } from "../dto/user-response.dto.js";
+
+const getAllUsers = async (req, res, next) => {
+    try {
+        const users = await userServices.getAll();
+        const usersDTO = users.map(userResponseDto);
+        res.status(200).json({ status: "success", payload: usersDTO });
+    } catch (error) {
+        error.path = "[GET] /api/user/";
+        next(error);
+    }
+};
 
 const sendEmailResetPassword = async (req, res, next) => {
     try {
@@ -54,4 +66,4 @@ const addDocuments = async (req, res, next) => {
     }
 };
 
-export default { sendEmailResetPassword, resetPassword, changeUserRole, addDocuments };
+export default { getAllUsers, sendEmailResetPassword, resetPassword, changeUserRole, addDocuments };

@@ -1,4 +1,4 @@
-import cartsService from "../services/cart.service.js";
+import cartsService from "../services/cart.services.js";
 import ticketServices from "../services/ticket.services.js";
 
 // create cart

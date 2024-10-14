@@ -2,6 +2,7 @@ import productsRepository from "../persistences/mongo/repositories/product.repos
 import { productResponseDto } from "../dto/product-response.dto.js";
 import { generateProductsMocks } from "../mocks/product.mock.js";
 import error from  "../errors/customErrors.js";
+import { sendMail } from "../utils/sendMails.js";
 
 const getAll = async (query, options) => {
     const products = await productsRepository.getAll(query, options);
@@ -19,7 +20,7 @@ const getById = async (id) => {
 const create = async (data, user) => {
     let productData = data;
     if (user.role === "premium") {
-        productData = { ...data, owner: user._id };
+        productData = { ...data, owner: user.email };
     }
 
     const product = await productsRepository.create(productData);
@@ -36,9 +37,17 @@ const deleteOne = async (id, user) => {
     const productData = await productsRepository.getById(id);
     if (!productData) throw error.notFoundError(`Producto con id ${id} no encontrado`);
 
-    if (user.role === "premium" && productData.owner !== user._id) {
+    if (user.role === "premium" && productData.owner !== user.email) {
         throw error.unauthorizedError(`Usuario no autorizado para eliminar el producto con id ${id}`);
     }
+
+    if (user.role === "admin" && productData.owner !== "admin") {
+        await sendMail(
+            productData.owner, 
+            "Producto eliminado", `El producto ${productData.title} ha sido eliminado por el usuario administrador`
+        );
+    }
+    
     const product = await productsRepository.deleteOne(id);
     return product;
 };

@@ -1,0 +1,36 @@
+paths:
+    /api/session/current:
+        get:
+            tags:
+                - Session
+            summary: Obtener los datos del usuario logeado
+            responses:
+                "200":
+                    description: Los datos de usuario fueron obtenidos correctamente.
+                    content:
+                      application/json:
+                        schema:
+                          type: array
+                          items:
+                            $ref: "#components/schemas/user"
+                "500":
+                    description: Error interno del servidor
+
+components:
+    schemas:
+        user:
+            type: object
+            properties:
+                _id:
+                    type: ObjectId
+                email:
+                    type: string
+                role:
+                    type: string
+                cart:
+                    type: ObjectId
+            example:
+              _id: "66bfcbee59656de3ea704c27"
+              email: "juanperez@mail.com"
+              role: "user"
+              cart: "66f73c2f7bfdf964d7f43ef2"

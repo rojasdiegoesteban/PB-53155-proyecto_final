@@ -1,0 +1,39 @@
+paths:
+    /api/user/{uid}/documents:
+        post:
+            tags:
+                - Users
+            summary: Subir documentos
+            parameters:
+              - name: uid
+                in: path
+                description: ID del usuario
+                required: true
+                schema: 
+                  type: string
+            requestBody:
+              required: true
+              content:
+                multipart/form-data:
+                  schema:
+                    type: object
+                    properties:
+                      profile:
+                        type: string
+                        format: binary
+                      imgProduct:
+                        type: string
+                        format: binary
+                      document:
+                        type: string
+                        format: binary
+
+            responses:
+                "200":
+                    description: Documentos subidos con exito
+                "401":
+                    description: jwt expirado
+                "404":
+                    description: Usuario no encontrado
+                "500":
+                    description: Error interno del servidor

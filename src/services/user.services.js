@@ -3,6 +3,12 @@ import userRepository from "../persistences/mongo/repositories/user.repository.j
 import { createHash, isValidPassword } from "../utils/hashPassword.js";
 import { sendMail } from "../utils/sendMails.js";
 
+const getAll = async () => {
+    const users = await userRepository.getAll();
+    if (!users) throw customErrors.notFoundError("No se encontraron usuarios");
+    return users;
+};
+
 const sendEmailResetPassword = async (email) => {
     const message = "Debe restablecer su password en el siguiente link https://www.google.com";
     await sendMail(email, "Restablecer password", message);
@@ -45,4 +51,4 @@ const addDocuments = async (uid, reqFiles) => {
     return user;
 };
 
-export default { sendEmailResetPassword, resetPassword, changeUserRole, addDocuments };
+export default { getAll, sendEmailResetPassword, resetPassword, changeUserRole, addDocuments };
